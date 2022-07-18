@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/03b0aaadec.js" crossorigin="anonymous"></script>
+    <title>🌡 Thermometer</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body,
+    html {
+        background-color: rgb(37 37 56);
+        height: auto;
+        width: 100%;
+    }
+    
+    #main-div {
+        margin-top: 160px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-area: 1fr;
+        align-items: center;
+    }
+    
+    #top-div h1 {
+        text-align: center;
+        color: white;
+        font-size: 100px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+    #below-div {
+        display: inline;
+    }
+    
+    #below-div h1 {
+        text-align: center;
+        color: white;
+        font-size: 100px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+    .fas {
+        color: #bf5d00;
+    }
+</style>
+
+<body>
+
+    <div id="main-div">
+
+        <div id="top-div">
+            <h1>I am</h1>
+        </div>
+
+        <div id="below-div">
+
+            <div>
+                <h1> Thermometer <span id="temp" class="fas"> </span></h1>
+
+            </div>
+        </div>
+
+</body>
+<script>
+    const temp = document.getElementById('temp');
+    temp.innerHTML = '&#xf2cb';
+    const thermometer = () => {
+
+
+        setTimeout(() => {
+            temp.innerHTML = '&#xf2ca';
+            temp.style.color = "#bf5d00";
+        }, 2000);
+
+        setTimeout(() => {
+            temp.innerHTML = '&#xf2c9';
+            temp.style.color = "#bf5d00";
+        }, 3000);
+
+        setTimeout(() => {
+            temp.innerHTML = '&#xf2c8';
+            temp.style.color = "#bf5d00";
+        }, 4000);
+
+        setTimeout(() => {
+            temp.innerHTML = '&#xf2c7';
+            temp.style.color = "#b12d2d";
+        }, 5000);
+
+    }
+    thermometer();
+    setInterval(thermometer, 5000);
+</script>
+
+</html>
